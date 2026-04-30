@@ -3,18 +3,18 @@ function login()
     const divMensaje = document.querySelector('#mensaje');
     
     const [
-    	{value: email},
+    	{value: usuario},
     	{value: contraseña},
     ] = document.querySelectorAll('.input-box input');
 
-    if (!email)
-    	divMensaje.innerHTML = "Por favor, ingresa un email"
+    if (usuario !== "admin")
+    	divMensaje.innerHTML = "Usuario incorrecto"
     
-    else if (!contraseña)
-    	divMensaje.innerHTML = "Por favor, ingresa una contraseña"
+    else if (contraseña !== "123")
+    	divMensaje.innerHTML = "Contraseña incorrecta"
 
     else {
-        localStorage.setItem("usuario", email);
+        localStorage.setItem("usuario", usuario);
     	location.href = "/principal/"
     }
 }
