@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="dark light">
+	
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Cozy Cone – Inicio</title>
+</head>
+<body>
+	<div class="topbar">
+		<a class="logo" href="/">Cozy Cone</a>
+
+		<a href="/principal/">Principal</a>
+	</div>
+
+	<div class="content">
+		<div id="mensaje" class="card"></div>
+
+		<div class="form card">
+			<img src="/assets/logo.png" alt="logo" id="logo"
+				draggable="false">
+
+			<div class="input-box">
+				<label for="email">
+					Email:
+				</label>
+				<input 
+					name="email"
+					type="email"
+					
+					placeholder="nombre@mail.com"
+				>
+			</div>
+
+			<div class="input-box">
+				<label for="password">
+					Contraseña:
+				</label>
+				<input
+					name="password"
+					type="password"
+
+					min=8
+					max=1
+
+					placeholder="8-16 caracteres"
+				>
+			</div>
+
+			<div>
+				<button id="bottonIng">Entrar</button>
+			</div>
+			
+			<div class="bottom">
+				¿No te has registrado?
+				<a href="/registro/">Regístrate aquí</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="/js/script.js"></script>
+</html>
