@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="dark light">
-
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Cozy Cone – Registro</title>
+    <title>Registro</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="topbar">
-        <a class="logo" href="/">Cozy Cone</a>
+    <h1>Registro</h1>
+    <form id="formularioRegistro">
+        <div id="contenedorInputs">
 
-        <a href="/principal/">Principal</a>
-    </div>
-
-    <div class="content">
-        <img 
-            src="/assets/back.png"
-            alt="Backend developers"
-            draggable="false"
-        >
-        <h3>Backend developers</h3>
-    </div>
+        </div>
+        <button type="button" id="btnRegistrar">Registrar</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/script_registro.js"></script>
 </body>
 </html>
