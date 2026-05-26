@@ -50,6 +50,7 @@ formMaker(
 			return false;
 		}
 
+		location.href = "/principal/";
 		return true;
 	}
 )
