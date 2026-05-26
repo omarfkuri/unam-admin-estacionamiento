@@ -15,14 +15,14 @@
  * }[] } fields
  * @param { HTMLFormElement } form
  * @param { string } buttonTitle
- * @param { (inp: { [key in T]: string | null }) => boolean } onSubmit
+ * @param { (inp: { [key in T]: string | null }) => boolean | Promise<boolean> } onSubmit
  * @returns { void }
  * */
 export function formMaker(fields, form, onSubmit)
 {
   const contenedor = document.querySelector(".fields");
 	
-	form.onsubmit = e => 
+	form.onsubmit = async e => 
 	{
 		e.preventDefault();
 
@@ -30,7 +30,7 @@ export function formMaker(fields, form, onSubmit)
 			(new FormData(form)).entries()
 		);
 
-		if (onSubmit(results))
+		if (await onSubmit(results))
 		{
 			form.reset();
 		}
