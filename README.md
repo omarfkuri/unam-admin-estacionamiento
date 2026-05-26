@@ -4,17 +4,17 @@ Visible en el siguiente [link](https://omarfkuri.github.io/unam-admin-estacionam
 
 # Credenciales de prueba
 
-## Administrador
+## Súper administrador
 
 - Número de empleado: 412909034
 - Contraseña: 12345678
 
-## Empleados
+## Administrador
 
 - Número de empleado: 412908392
 - Contraseña: 98765432
 
-<br>
+## Empleado
 
 - Número de empleado: 412900329
 - Contraseña: 82736451
