@@ -11,7 +11,7 @@ if (authLoad.hasError)
 	alert("No se pudo iniciar la aplicación.")
 
 if (auth.isLoggedIn())
-	location.href = "/principal/";
+	location.href = "/unam-admin-estacionamiento/principal/";
 
 formMaker(
 	[

@@ -10,7 +10,7 @@ if (authLoad.hasError)
 	alert("No se pudo iniciar la aplicación.")
 
 if (!auth.isLoggedIn())
-	location.href = "/";
+	location.href = "/unam-admin-estacionamiento/";
 
 
 const btn = document.getElementById("cerrarSesionBtn");
@@ -26,5 +26,5 @@ btn.onclick = async () =>
 		return;
 	}
 
-	location.href = "/";
+	location.href = "/unam-admin-estacionamiento/";
 };
