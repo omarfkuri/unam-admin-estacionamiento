@@ -3,7 +3,6 @@ import { formMaker } from "../../lib/formMaker.js";
 
 
 const db = new DB();
-const form = document.querySelector("form");
 
 formMaker(
 	[
@@ -36,7 +35,7 @@ formMaker(
 			required: true
 		},
 	],
-	form,
+	"registroForm",
 	async (fields) => {
 
 		if (fields.firstName == null || fields.firstName.length == 0)

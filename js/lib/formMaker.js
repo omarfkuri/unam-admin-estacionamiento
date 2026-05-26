@@ -13,14 +13,15 @@
  * 		required?: boolean
  * 		pattern?: RegExp
  * }[] } fields
- * @param { HTMLFormElement } form
+ * @param { string } formID
  * @param { string } buttonTitle
  * @param { (inp: { [key in T]: string | null }) => boolean | Promise<boolean> } onSubmit
  * @returns { void }
  * */
-export function formMaker(fields, form, onSubmit)
+export function formMaker(fields, formID, onSubmit)
 {
-  const contenedor = document.querySelector(".fields");
+	const form = document.getElementById(formID);
+  const contenedor = form.querySelector(".fields");
 	
 	form.onsubmit = async e => 
 	{
