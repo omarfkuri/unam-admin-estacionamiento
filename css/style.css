@@ -97,6 +97,21 @@ h1, h2, h3, h4, h5, h6
 	border-radius: .5em;
 	box-shadow: 0 0 1px #0005;
 	padding: 1em;
+	border: 1px solid #BBB;
+	border-radius: 10px;
+	background: #FFF;
+}
+
+.small
+{
+	font-size: .8em;
+}
+
+.fields
+{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }
 
 .content
@@ -169,7 +184,6 @@ form
 	width: min-content;
 	white-space: nowrap;
 	margin: 0 auto;
-	font-size: 2em;
 	background: #417a87;
 }
 

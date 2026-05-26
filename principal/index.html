@@ -17,21 +17,53 @@
 	</div>
 
 	<div class="content">
-		<h1>Bienvenido al sistema, <span id="usuarioBox"></span> </h1>
+		<div class="top">
+			<div class="first card">
+				Bienvenido al sistema, <b id="usuarioBox"></b>.
+			</div>
 
-		<h2>Bloomware</h2>
+			<div class="card">
+				<button id="cerrarSesionBtn">Cerrar sesión</button>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="card">
+				<h2>Bloomware</h2>
 
-		<ol>
-			<li>Freaner Kuri Omar – <b>Líder</b></li>
-			<li>De la Cruz Roque Isaid – <b>Estilador</b></li>
-			<li>Guerra Córdova Emiliano</li>
-			<li>Jarquín Ordaz Ariadna</li>
-			<li>Lozano Ortiz Karen</li>
-			<li>Vargas Pérez Patricia Victoria</li>
-		</ol>
-
-		<button id="cerrarSesionBtn">Cerrar sesión</button>
-
+				<ol>
+					<li>Freaner Kuri Omar – <b>Líder</b></li>
+					<li>De la Cruz Roque Isaid – <b>Estilador</b></li>
+					<li>Guerra Córdova Emiliano</li>
+					<li>Jarquín Ordaz Ariadna</li>
+					<li>Lozano Ortiz Karen</li>
+					<li>Vargas Pérez Patricia Victoria</li>
+				</ol>
+			</div>
+		</div>
 	</div>
+	<style>
+		
+		.top
+		{
+			display: flex;
+			gap: 10px;
+
+			.first
+			{
+				width: 100%;
+			}
+		}
+		
+		.bottom
+		{
+			display: flex;
+
+			.card
+			{
+				width: 100%;
+			}
+		}
+
+	</style>
 </body>
 </html>
