@@ -24,23 +24,20 @@
 
 			<div class="card">
 				<button id="cerrarSesionBtn">Cerrar sesión</button>
+
+				<div class="number-bar">
+					<div class="title">Notificaciones</div>
+					<div class="number">0</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="middle">
-			<div class="card number-bar">
+			<div class="card cars-card">
 				<div class="title">Vehículos registrados</div>
-				<div class="number">4</div>
-			</div>
 
-			<div class="card number-bar">
-				<div class="title">Lugares ocupados</div>
-				<div class="number">2</div>
-			</div>
-
-			<div class="card number-bar">
-				<div class="title">Notificaciones</div>
-				<div class="number">0</div>
+				<div id="carDisplay">
+				</div>
 			</div>
 		</div>
 
@@ -77,27 +74,13 @@
 			display: flex;
 			gap: 10px;
 
-			.card
-			{
-				width: 100%;
-			}
-
-			.number-bar
+			.cars-card
 			{
 				display: flex;
-				justify-content: space-between;
-				align-items: center;
+				flex-direction: column;
+				gap: 15px;
 
-				.title
-				{
-					font-size: .6em;
-				}
-
-				.number
-				{
-					text-align: right;
-					font-weight: bold;
-				}
+				width: 100%;
 			}
 		}
 		
@@ -111,6 +94,72 @@
 			}
 		}
 
+		.number-bar
+		{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.title
+			{
+				font-size: .6em;
+			}
+
+			.number
+			{
+				text-align: right;
+				font-weight: bold;
+			}
+		}
+
+		#carDisplay
+		{
+			display: flex;
+			gap: 15px;
+
+			overflow-x: scroll;
+			padding-bottom: 5px;
+		}
+
+		.car
+		{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			font-size: .8em;
+
+			width: 230px;
+			height: 230px;
+
+			.car-top
+			{
+				.car-title
+				{
+					font-weight: bold;
+				}
+
+				.car-subtitle
+				{
+
+				}
+			}
+
+			.car-bottom
+			{
+
+			}
+		}
+
+		.car.occupied
+		{
+			border-color: #000;
+		}
+
+		.car:not(.occupied) .car-bottom
+		{
+			opacity: .5;
+		}
 	</style>
 </body>
 </html>
