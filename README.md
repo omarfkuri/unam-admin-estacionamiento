@@ -12,9 +12,9 @@ Visible en el siguiente [link](https://omarfkuri.github.io/unam-admin-estacionam
 ## Empleados
 
 - Número de empleado: 412908392
-- Contraseña: 12345678
+- Contraseña: 98765432
 
 <br>
 
 - Número de empleado: 412900329
-- Contraseña: 12345678
+- Contraseña: 82736451
