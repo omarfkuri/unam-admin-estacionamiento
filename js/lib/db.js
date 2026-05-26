@@ -53,6 +53,7 @@ export class DB
 
 	/**
 	 * @param { string } workerID
+	 * @param { string } password
 	 * 
 	 * @returns { Promise<Result<{
 	 * 		first_name: string
@@ -63,8 +64,9 @@ export class DB
 	 * 		id: number
 	 * }>> }
 	 * */
-	async getUserByWorkerID(
-		workerID
+	async getUserByWorkerIDAndPassword(
+		workerID,
+		password
 	)
 	{
 		try
@@ -72,6 +74,7 @@ export class DB
 			const { data, error } = await this.db.from('users')
 			.select("*")
 			.eq("worker_id", workerID)
+			.eq("password", password)
 			.single();
 
 			if (error)
