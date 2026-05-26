@@ -15,7 +15,7 @@
  * }[] } fields
  * @param { HTMLFormElement } form
  * @param { string } buttonTitle
- * @param { (inp: { [key in T]: string | null }) => unknown } onSubmit
+ * @param { (inp: { [key in T]: string | null }) => boolean } onSubmit
  * @returns { void }
  * */
 export function formMaker(fields, form, onSubmit)
@@ -30,7 +30,10 @@ export function formMaker(fields, form, onSubmit)
 			(new FormData(form)).entries()
 		);
 
-		onSubmit(results);
+		if (onSubmit(results))
+		{
+			form.reset();
+		}
 	};
 
 	for (const field of fields)

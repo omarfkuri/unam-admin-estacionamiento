@@ -51,10 +51,11 @@ formMaker(
 		{
 			alert("No se pudo crear el usuario.");
 			console.error(result.error);
+
+			return false;
 		}
-		else
-		{
-			alert("El usuario se ha creado correctamente.")
-		}
+		
+		alert("El usuario se ha creado correctamente.");
+		return true;
 	}
 )
