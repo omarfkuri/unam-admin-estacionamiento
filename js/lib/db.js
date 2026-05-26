@@ -17,24 +17,31 @@ export class DB
 	 * @param { string } firstName
 	 * @param { string } lastName
 	 * @param { string } workerID
+	 * @param { string } password
 	 * 
-	 * @returns { Result<null> }
+	 * @returns { Promise<Result<null>> }
 	 * */
 	async createUser(
 		firstName,
 		lastName,
-		workerID
+		workerID,
+		password
 	)
 	{
 		try
 		{
-			await this.db.from('users')
+			const { error } = await this.db.from('users')
 			.insert([{
 				first_name: firstName,
 				last_name: lastName,
 				worker_id: workerID,
+				password,
 				role_id: 1
 			}]);
+
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
 
       return new Result(false, null);
     }
@@ -45,11 +52,16 @@ export class DB
 	}
 
 	/**
-	 * @param { string } firstName
-	 * @param { string } lastName
 	 * @param { string } workerID
 	 * 
-	 * @returns { Result<null> }
+	 * @returns { Promise<Result<{
+	 * 		first_name: string
+	 * 		last_name: string
+	 * 		worker_id: string
+	 * 		password: string
+	 * 		role_id: number
+	 * 		id: number
+	 * }>> }
 	 * */
 	async getUserByWorkerID(
 		workerID
@@ -57,12 +69,15 @@ export class DB
 	{
 		try
 		{
-			await this.db.from('users')
+			const { data, error } = await this.db.from('users')
 			.select("*")
 			.eq("worker_id", workerID)
 			.single();
 
-      return new Result(false, null);
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
+      return new Result(false, data);
     }
     catch(error)
     {
