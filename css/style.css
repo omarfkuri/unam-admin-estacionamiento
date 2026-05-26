@@ -107,13 +107,6 @@ h1, h2, h3, h4, h5, h6
 	font-size: .8em;
 }
 
-.fields
-{
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-}
-
 .content
 {
 	display: flex;
@@ -146,6 +139,13 @@ form
 
 	max-width: 400px;
 	margin-inline: auto;
+
+	.fields
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
 
 	.input-box
 	{
