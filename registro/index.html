@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro</title>
+  <meta name="theme-color" content="dark light">
 
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/js/page/registro/index.js" type="module" defer></script>
+  
+  <title>Registro</title>
 </head>
 <body>
   <div class="topbar">
@@ -16,16 +18,18 @@
     <a href="/principal/">Principal</a>
   </div>
 
-  <form id="registroForm">
-    <h2>Registro</h2>
-    
-    <div class="fields"></div>
+  <div class="content">
+    <form id="registroForm">
+      <h2>Registro</h2>
+      
+      <div class="fields"></div>
 
-    <button>Registrar</button>
+      <button>Registrar</button>
 
-    <div>
-      ¿Ya tiene cuenta? <a href="/">Ingrese aquí</a>
-    </div>
-  </form>
+      <div>
+        ¿Ya tiene cuenta? <a href="/">Ingrese aquí</a>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
