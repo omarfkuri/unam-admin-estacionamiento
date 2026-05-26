@@ -184,4 +184,68 @@ export class DB
       return new Result(true, JSON.stringify(error));
     }
 	}
+
+	/**
+	 * @param { string } userID
+	 * 
+	 * @returns { Promise<Result<{
+	 * 		plate: string
+	 * 		color: string
+	 * 		brand: string
+	 * 		model: string
+	 * 		user_id: number
+	 * 		id: number
+	 * }[]>> }
+	 * */
+	async getUserCars(
+		userID
+	)
+	{
+		try
+		{
+			const { data, error } = await this.db.from('cars')
+			.select("*")
+			.eq("user_id", userID);
+
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
+      return new Result(false, data);
+    }
+    catch(error)
+    {
+      return new Result(true, JSON.stringify(error));
+    }
+	}
+
+	/**
+	 * @param { string[] } carIDs
+	 * 
+	 * @returns { Promise<Result<{
+	 * 		space_number: number
+	 * 		park_number: number
+	 * 		current_car_id: number
+	 * 		id: number
+	 * }[]>> }
+	 * */
+	async getSpaces(
+		carIDs
+	)
+	{
+		try
+		{
+			const { data, error } = await this.db.from('spaces')
+			.select("*")
+			.in("current_car_id", carIDs);
+
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
+      return new Result(false, data);
+    }
+    catch(error)
+    {
+      return new Result(true, JSON.stringify(error));
+    }
+	}
 }
