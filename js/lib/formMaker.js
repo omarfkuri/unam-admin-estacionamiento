@@ -41,6 +41,7 @@ export function formMaker(fields, form, onSubmit)
     const input = document.createElement('input');
     input.type  = field.type;
     input.name  = field.name;
+    input.placeholder = field.placeholder;
 
     if (field.pattern != null)
     	input.pattern = field.pattern;
