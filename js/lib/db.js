@@ -87,4 +87,101 @@ export class DB
       return new Result(true, JSON.stringify(error));
     }
 	}
+
+	/**
+	 * @param { string } userID
+	 * 
+	 * @returns { Promise<Result<string>> }
+	 * */
+	async createSession(
+		userID
+	)
+	{
+		try
+		{
+			const { data, error } = await this.db.from('sessions')
+			.insert([{
+				user_id: userID
+			}])
+			.select()
+			.single();
+
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
+      return new Result(false, data.id);
+    }
+    catch(error)
+    {
+      return new Result(true, JSON.stringify(error));
+    }
+	}
+
+	/**
+	 * @param { string } userID
+	 * 
+	 * @returns { Promise<Result<{
+	 * 		first_name: string
+	 * 		last_name: string
+	 * 		worker_id: string
+	 * 		password: string
+	 * 		role_id: number
+	 * 		id: number
+	 * }>> }
+	 * */
+	async getUserBySessionToken(
+		tokenID
+	)
+	{
+		try
+		{
+			const { data, error } = await this.db.from('sessions')
+			.select("*")
+			.eq("id", tokenID)
+			.single();
+
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
+			const { data: data2, error: error2 } = await this.db.from('users')
+			.select("*")
+			.eq("id", data.user_id)
+			.single();
+
+			if (error2)
+      	return new Result(true, JSON.stringify(error2));
+
+      return new Result(false, data2);
+    }
+    catch(error)
+    {
+      return new Result(true, JSON.stringify(error));
+    }
+	}
+
+	/**
+	 * @param { string } tokenID
+	 * 
+	 * @returns { Promise<Result<null>> }
+	 * */
+	async removeSession(
+		tokenID
+	)
+	{
+		try
+		{
+			const { error } = await this.db.from('sessions')
+			.delete()
+			.eq("id", tokenID);
+
+			if (error)
+      	return new Result(true, JSON.stringify(error));
+
+      return new Result(false, null);
+    }
+    catch(error)
+    {
+      return new Result(true, JSON.stringify(error));
+    }
+	}
 }

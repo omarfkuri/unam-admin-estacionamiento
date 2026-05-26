@@ -1,8 +1,17 @@
 import { DB } from "../lib/db.js";
+import { Auth } from "../lib/auth.js";
 import { formMaker } from "../lib/formMaker.js";
 
 
 const db = new DB();
+const auth = new Auth(db);
+
+const authLoad = await auth.load();
+if (authLoad.hasError)
+	alert("No se pudo iniciar la aplicación.")
+
+if (auth.isLoggedIn())
+	location.href = "/principal/";
 
 formMaker(
 	[
@@ -46,6 +55,16 @@ formMaker(
 		{
 			alert("El usuario o contraseña son incorrectos.");
 			console.error(result.error);
+
+			return false;
+		}
+
+		const result2 = await auth.login(result.data.id);
+
+		if (result2.hasError)
+		{
+			alert("No se pudo crear una nueva sesión");
+			console.error(result2.error);
 
 			return false;
 		}
