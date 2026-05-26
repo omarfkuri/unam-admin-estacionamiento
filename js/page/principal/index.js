@@ -12,6 +12,10 @@ if (authLoad.hasError)
 if (!auth.isLoggedIn())
 	location.href = "/unam-admin-estacionamiento/";
 
+const user = auth.currentUser;
+const usuarioBox = document.getElementById("usuarioBox");
+
+usuarioBox.innerText = `${user.first_name} ${user.last_name}`;
 
 const btn = document.getElementById("cerrarSesionBtn");
 
