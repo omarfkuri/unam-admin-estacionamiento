@@ -62,7 +62,7 @@ else
 				</div>
 				<div class="car-subtitle">
 					<div class="car-brand">${car.brand}</div>
-					<div class="car-plate">${car.plate}</div>
+					<code class="car-plate">${car.plate}</code>
 				</div>
 			</div>
 			<div class="car-bottom">
