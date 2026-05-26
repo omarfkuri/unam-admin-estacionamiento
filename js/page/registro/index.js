@@ -38,6 +38,31 @@ formMaker(
 	],
 	form,
 	async (fields) => {
+
+		if (fields.firstName == null || fields.firstName.length == 0)
+		{
+			alert("Ingresa un nombre válido.");
+			return false;
+		}
+
+		if (fields.lastName == null || fields.lastName.length == 0)
+		{
+			alert("Ingresa unos apellidos válidos.");
+			return false;
+		}
+
+		if (fields.workerID == null || fields.workerID.length == 0)
+		{
+			alert("Ingresa uno número de empleado válido.");
+			return false;
+		}
+
+		if (fields.password == null || fields.password.length < 8
+			|| fields.password.length > 16)
+		{
+			alert("Ingresa una contraseña entre 8 y 16 caracteres.");
+			return false;
+		}
 		
 		const result = await db.createUser(
 			fields.firstName,
