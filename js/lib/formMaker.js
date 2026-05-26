@@ -39,6 +39,9 @@ export function formMaker(fields, formID, onSubmit)
 
 	for (const field of fields)
 	{
+    const inputBox = document.createElement('div');
+    div.classList.add("input-box");
+
     const label = document.createElement('label');
     label.textContent = field.label;
 
@@ -53,9 +56,9 @@ export function formMaker(fields, formID, onSubmit)
     if (field.required != null)
     	input.required = field.required;
 
-    input.classList.add("input-box");
+    inputBox.append(label);
+    inputBox.append(input);
 
-    contenedor.appendChild(label);
-    contenedor.appendChild(input);
+    contenedor.append(inputBox);
 	}
 }
