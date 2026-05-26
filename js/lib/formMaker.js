@@ -40,7 +40,7 @@ export function formMaker(fields, formID, onSubmit)
 	for (const field of fields)
 	{
     const inputBox = document.createElement('div');
-    div.classList.add("input-box");
+    inputBox.classList.add("input-box");
 
     const label = document.createElement('label');
     label.textContent = field.label;
