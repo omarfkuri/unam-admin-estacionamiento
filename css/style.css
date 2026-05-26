@@ -139,12 +139,6 @@ form
 
 		width: 100%;
 	}
-
-	.input-box:focus
-	{
-		border-color: rgb(48, 224, 145);
-		transform: scale(1.5);
-	}
 }
 
 #logo
