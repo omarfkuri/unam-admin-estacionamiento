@@ -1,8 +1,17 @@
 import { DB } from "../../lib/db.js";
+import { Auth } from "../../lib/auth.js";
 import { formMaker } from "../../lib/formMaker.js";
 
 
 const db = new DB();
+const auth = new Auth(db);
+
+const authLoad = await auth.load();
+if (authLoad.hasError)
+	alert("No se pudo iniciar la aplicación.")
+
+if (auth.isLoggedIn())
+	location.href = "/principal/";
 
 formMaker(
 	[
