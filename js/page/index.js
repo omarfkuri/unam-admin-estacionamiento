@@ -13,6 +13,13 @@ if (authLoad.hasError)
 if (auth.isLoggedIn())
 	location.href = "/unam-admin-estacionamiento/principal/";
 
+const mensaje = document.querySelector("#mensaje");
+
+function showMessage(str)
+{
+	mensaje.innerText = str;
+}
+
 formMaker(
 	[
 		{
@@ -35,14 +42,14 @@ formMaker(
 
 		if (fields.workerID == null || fields.workerID.length == 0)
 		{
-			alert("Ingresa uno número de empleado válido.");
+			showMessage("Ingresa uno número de empleado válido.");
 			return false;
 		}
 
 		if (fields.password == null || fields.password.length < 8
 			|| fields.password.length > 16)
 		{
-			alert("Ingresa una contraseña entre 8 y 16 caracteres.");
+			showMessage("Ingresa una contraseña entre 8 y 16 caracteres.");
 			return false;
 		}
 		
@@ -53,7 +60,7 @@ formMaker(
 
 		if (result.hasError)
 		{
-			alert("El usuario o contraseña son incorrectos.");
+			showMessage("El usuario o contraseña son incorrectos.");
 			console.error(result.error);
 
 			return false;
@@ -63,7 +70,7 @@ formMaker(
 
 		if (result2.hasError)
 		{
-			alert("No se pudo crear una nueva sesión");
+			showMessage("No se pudo crear una nueva sesión");
 			console.error(result2.error);
 
 			return false;
