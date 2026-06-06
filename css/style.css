@@ -5,13 +5,9 @@
 
 :root
 {
-	--primary-500: #61678B;
-	--primary-400: #8488B5;
-	--primary-300: #BCB9D8;
-	--primary-200: #DEDEEA;
-
-	--secondary-500: #78ACC1;
-	--secondary-400: #98BFD0;
+	--primary-500: #F1642E;
+	--primary-400: #FCDD9D;
+	--primary-300: #FDF8E2;
 
 	--fg: black;
 	--fg-on-color: white;
@@ -39,8 +35,7 @@ body
 	font-family: Arial;
 
 	color: var(--fg);
-	background-color: var(--bg-page);
-
+	background-color: var(--bg-card);
 }
 
 input, button
@@ -52,12 +47,12 @@ button
 {
 	cursor: pointer;
 
-	border: none;
+	border: 1px solid var(--primary-500);
 	padding: .25em .5em;
 	border-radius: .25em;
 
-	background-color: var(--primary-500);
-	color: var(--fg-on-color);
+	background-color: var(--primary-400);
+	color: var(--fg);
 }
 
 h1, h2, h3, h4, h5, h6
@@ -76,28 +71,44 @@ h1, h2, h3, h4, h5, h6
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: var(--primary-500);
+	background-color: var(--bg-card);
+	box-shadow: 0 1px 5px var(--primary-400);
+	z-index: 99;
 
-	> .logo
+	> .begin
 	{
-		font-weight: bold;
-		text-decoration: none;
-		color: var(--fg-on-color);
+		> img
+		{
+			height: 50px;
+		}
+
+		> a
+		{
+			color: var(--fg-on-color);
+		}
 	}
 
-	> a
+	> .end
 	{
-		color: var(--fg-on-color);
+		display: flex;
+		justify-content: center;
+		align-items: end;
+		height: 100%;
+		gap: .5em;
 	}
+}
+
+.head-logo
+{
+	width: 300px;
 }
 
 .card
 {
 	background-color: var(--bg-card);
 	border-radius: .5em;
-	box-shadow: 0 0 1px #0005;
 	padding: 1em;
-	border: 1px solid #BBB;
+	border: 3px solid var(--primary-400);
 	border-radius: 10px;
 	background: #FFF;
 }
@@ -107,7 +118,17 @@ h1, h2, h3, h4, h5, h6
 	font-size: .8em;
 }
 
-.content
+.content-wrapper
+{
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--primary-300);
+
+	overflow-y: scroll;
+}
+
+.content-container
 {
 	display: flex;
 	flex-direction: column;
@@ -115,12 +136,16 @@ h1, h2, h3, h4, h5, h6
 	width: 100%;
 	max-width: 800px;
 	height: 100%;
-
+	
 	padding: .5em;
 
 	margin-inline: auto;
+}
 
-	overflow-y: scroll;
+.content-container.center
+{
+	justify-content: center;
+	align-items: center;
 }
 
 .bottom
@@ -176,20 +201,6 @@ form
 #mensaje:empty
 {
 	display: none;
-}
-
-
-#cerrarSesionBtn
-{
-	width: min-content;
-	white-space: nowrap;
-	margin: 0 auto;
-	background: #417a87;
-}
-
-#cerrarSesionBtn:hover
-{
-	background: #0c5262;
 }
 
 
