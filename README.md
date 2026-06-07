@@ -58,9 +58,7 @@ Utiliza el `localStorage` para mantener un token
 vivo en la sesión actual. También consulta la base de
 datos para verificar el token actual, así como iniciar
 y cerrar sesión.
----
-## Evidencias
-Indicar dónde se almacenan las capturas, reportes, logs o evidencias generadas.
+
 ---
 ## Estructura del proyecto
 El proyecto contiene una carpeta `css` que contiene estilos,
